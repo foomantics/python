@@ -1,9 +1,7 @@
-#!/usr/local/bin/python3
 ################################################################################
 # File: cool_proxy_ips_ports.py
 # Author(s): Jim Lee
-# Date: 09/07/19
-# Updated: 09/12/19
+# Updated: 5/25/23
 # Description: This script will access a target URL "http://www.cool-proxy.net
 #     /proxies/http_proxy_list/sort:score/direction:desc" then return a CSV
 #	  file with two columns namely 'ip_address' and 'port_number' values from 
@@ -33,8 +31,8 @@ def writeCSV(sortedPrx):
 
     return csvName
 
-# Helper function to sort the JSON file which populates the specified URL by
-# PerimeterX i.e. HTTP Proxy table sorted by decreasing 'score'.
+# Helper function to sort the JSON file which populates the specified URL
+# i.e. HTTP Proxy table sorted by decreasing 'score'.
 #
 # Input: 'prx' i.e. unsorted list of JSON objects
 # Output: list() i.e. sorted list of JSON objects
@@ -42,7 +40,7 @@ def sortProxyJSON(prx):
     return sorted(prx, key=lambda k: k['score'], reverse=True)
 
 # Helper function to access and parse the JSON file which populates the 
-# specified URL by PerimeterX i.e. HTTP Proxy table.
+# specified URL i.e. HTTP Proxy table.
 #
 # Input: 'headers' i.e. HTTP headers
 # Output: list() i.e. list of JSON objects
@@ -80,16 +78,16 @@ def createHeaders():
 
     return {'User-Agent': uaField, 'Content' : contentField}
 
-# Helper function to return URL string specified by PerimeterX.
+# Helper function to return URL string specified.
 # 
 # Input: None
-# Output: str() i.e. URL specified by PerimeterX
+# Output: str() i.e. URL specified 
 def createURL():
     tDom = "http://www.cool-proxy.net"
     return tDom + "/proxies/http_proxy_list/sort:score/direction:desc"
 
-# Visit the specified URL by PerimeterX, parse the HTTP Proxy table, and
-# create a CSV file containing columns 'ip_address' and 'port' populated with
+# Visit the specified URL , parse the HTTP Proxy table, and create a CSV
+# file containing columns 'ip_address' and 'port' populated with
 # the associated 'IP' and 'Port' columns from the parsed HTTP proxy table.
 # main() will finish by printing a message specifying the current working
 # directory where the CSV file mentioned above can be accessed.
