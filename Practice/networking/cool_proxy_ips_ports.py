@@ -86,7 +86,7 @@ def createURL():
     tDom = "http://www.cool-proxy.net"
     return tDom + "/proxies/http_proxy_list/sort:score/direction:desc"
 
-# Visit the specified URL , parse the HTTP Proxy table, and create a CSV
+# Visit the specified URL, parse the HTTP Proxy table, and create a CSV
 # file containing columns 'ip_address' and 'port' populated with
 # the associated 'IP' and 'Port' columns from the parsed HTTP proxy table.
 # main() will finish by printing a message specifying the current working
